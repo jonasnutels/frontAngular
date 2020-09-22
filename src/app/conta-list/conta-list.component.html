@@ -1,0 +1,30 @@
+<h2>Conta Retorno </h2>
+<table class ="table table-striped">
+<thead>
+    <tr> <th>ID</th>
+        <th>Nome</th>
+        <th>Conta</th>
+        <th>CPF</th>
+        <th>Saldo</th>
+        <th>Editar</th>
+        <th>Depositar</th>
+        <th>Sacar</th>
+        <th>Transferir</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor = "let conta of contas">
+        <td>{{conta.id}}</td>
+        <td>{{conta.nome}}</td>
+        <td>{{conta.conta}}</td>
+        <td>{{conta.cpf}}</td>
+        <td>{{conta.saldo}}</td>
+        <td><button (click)="updateContas(conta.id)" class="btn btn-info">Editar</button></td>
+        <td><button (click)="depositoConta" class="btn btn-info">Deposito</button></td>
+        <td><button (click)="updateContas(conta.id)" class="btn btn-info">Saque</button></td>
+        <td><button (click)="updateContas(conta.id)" class="btn btn-info">Transferir</button></td>
+   
+    </tr>
+</tbody>
+
+</table>
