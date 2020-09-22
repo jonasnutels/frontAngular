@@ -29,8 +29,14 @@ export class ContaListComponent implements OnInit {
   this.router.navigate(['updateconta', id]);
   }
 
-  depositoConta(){
-    this.router.navigate(['/deposito-conta']);
+  depositoConta(id: number){
+    this.router.navigate(['/deposito-conta', id]);
+  }
+  saqueConta(id: number){
+    this.router.navigate(['/saque-conta', id])
+  }
+  transConta(id:number){
+    this.router.navigate(['transferencia-conta/:id'])
   }
 
 

@@ -20,9 +20,9 @@
         <td>{{conta.cpf}}</td>
         <td>{{conta.saldo}}</td>
         <td><button (click)="updateContas(conta.id)" class="btn btn-info">Editar</button></td>
-        <td><button (click)="depositoConta" class="btn btn-info">Deposito</button></td>
-        <td><button (click)="updateContas(conta.id)" class="btn btn-info">Saque</button></td>
-        <td><button (click)="updateContas(conta.id)" class="btn btn-info">Transferir</button></td>
+        <td><button (click)="depositoConta(conta.id)" class="btn btn-info">Deposito</button></td>
+        <td><button (click)="saqueConta(conta.id)" class="btn btn-info">Saque</button></td>
+        <td><button (click)="transConta(conta.id)" class="btn btn-info">Transferir</button></td>
    
     </tr>
 </tbody>

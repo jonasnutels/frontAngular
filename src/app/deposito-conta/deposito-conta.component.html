@@ -1,1 +1,17 @@
-<p>deposito-conta works!</p>
+<div class = "col-md-8 offset-md-3">
+    <form (ngSubmit) = "onSubmit()">
+        
+        <div class = "form-group">
+            <label for="name">Conta</label>
+            <input type="text" class="form-control" id="conta"
+            required [(ngModel)]="conta.conta" name="conta">
+         
+       </div>
+            <label>Valor do Deposito</label>
+            <input type="number" class="form-control" id="valor"
+             name="valor">
+          
+            <br>
+        <button class = "btn btn-success"  type ="submit">Depositar</button>
+    </form>
+    </div>
