@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'updateconta/:id', component: UpdatecontaComponent},
   {path: 'deposito-conta/:id', component: DepositoContaComponent},
   {path: 'saque-conta/:id', component: SaqueContaComponent},
-  {path: 'transferencia-conta/:id', component: TransferenciaContaComponent}
+  {path: 'transferencia-conta/:id/', component: TransferenciaContaComponent}
   
 ];    
 

@@ -12,38 +12,25 @@ export class DepositoContaComponent implements OnInit {
 
   id: number;
   valor:number;
+
   conta: Conta = new Conta();
   constructor(private contaService: ContaService,
     private router: Router, private route: ActivatedRoute,
     ) { }
-
-  ngOnInit(): void {
-    
-    this.id = this.route.snapshot.params['id'];
+  ngOnInit(): void {    
     this.valor = this.route.snapshot.params['valor'];
-
-    
-    
+    this.id = this.route.snapshot.params['id'];
     this.contaService.getContaById(this.id).
-    subscribe (data =>{
-      
+    subscribe (data =>{      
       this.conta = data;
     }, error => console.log (error));
+    
 
     }
-    
-    depositoConta() {
-      this.contaService.updateConta(this.id, this.conta)
-        .subscribe(data => {
-          console.log(data);
-          this.conta = new Conta();
-          this.gotoList();
-        }, error => console.log(error));
-    }
+       
     depositoTeste() {
-      this.router.navigate(['deposito-conta'], 
-      { queryParams: { id: this.id, valor:this.valor} });
-      this.gotoList();
+ this.contaService.depositoConta(this.id, this.valor)
+ console.log(this.depositoTeste)     
     }
   
     onSubmit() {

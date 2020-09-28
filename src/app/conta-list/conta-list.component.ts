@@ -36,7 +36,7 @@ export class ContaListComponent implements OnInit {
     this.router.navigate(['/saque-conta', id])
   }
   transConta(id:number){
-    this.router.navigate(['transferencia-conta/:id'])
+    this.router.navigate([''])
   }
 
 

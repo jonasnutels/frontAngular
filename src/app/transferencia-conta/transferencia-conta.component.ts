@@ -17,41 +17,35 @@ export class TransferenciaContaComponent implements OnInit {
     private router: Router, private route: ActivatedRoute,
     ) { }
 
-    ngOnInit(): void {
-    
-      this.id = this.route.snapshot.params['id'];
-      this.valor = this.route.snapshot.params['valor'];
-  
-      
-      
-      this.contaService.getContaById(this.id).
-      subscribe (data =>{
+  ngOnInit(): void {    
+    this.id = this.route.snapshot.params['id'];
+    this.valor = this.route.snapshot.params['valor'];
         
-        this.conta = data;
-      }, error => console.log (error));
-  
-      }
-      
-      depositoConta() {
-        this.contaService.updateConta(this.id, this.conta)
-          .subscribe(data => {
-            console.log(data);
-            this.conta = new Conta();
-            this.gotoList();
-          }, error => console.log(error));
-      }
-      depositoTeste() {
-        this.router.navigate(['deposito-conta'], 
-        { queryParams: { id: this.id, valor:this.valor} });
-        this.gotoList();
-      }
+    this.contaService.getContaById(this.id).
+    subscribe (data =>{      
+      this.conta = data;
+    }, error => console.log (error));
+
+    }
     
-      onSubmit() {
-        this.depositoTeste();
-      }
-    
-      gotoList() {
-        this.router.navigate(['/contas']);
-      }
+    depositoConta() {
+      this.contaService.updateConta(this.id, this.conta)
+        .subscribe(data => {
+          console.log(data);
+          this.conta = new Conta();
+          this.gotoList();
+        }, error => console.log(error));
+    }
+    depositoTeste() {
+      this.router.navigate(['deposito-conta'], 
+      { queryParams: { id: this.id, valor:this.valor} });
     }
   
+    onSubmit() {
+      this.depositoTeste();
+    }
+  
+    gotoList() {
+      this.router.navigate(['/contas']);
+    }
+  }

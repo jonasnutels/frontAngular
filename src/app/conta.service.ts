@@ -28,11 +28,11 @@ export class ContaService {
   updateConta(id: number, value: any): Observable<Object> {
     return this.HttpClient.put(`${this.putURL}/${id}`, value);
   }
-  depositoConta(id: number, valor:number, value:any): Observable<Object>{
-    return this.HttpClient.put (`${this.putURL}/${id}&${valor}`, value);
+  depositoConta (id:number, valor: number){
+    return this.HttpClient.put (`${this.putURL}/${id}&${valor}`, null);
   }
-  saqueCotna (id:number, valor: number, value:any): Observable<Object>{
-    return this.HttpClient.put (`${this.putURL}/${id}&${valor}`, value);
+  saqueCotna (id:number, valor: number){
+    return this.HttpClient.put (`${this.putURL}/${id}&${valor}`, null);
   }
 
   transferenciaConta(idOrigem:number, idDestino:number, valor:number, value:any):Observable<Conta>{
